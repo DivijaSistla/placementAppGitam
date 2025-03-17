@@ -812,6 +812,7 @@ exports.addTypeOfRounds = async (req, res) => {
 
   // Check if the company name is unique
   const isUnique = await checkUniqueCompanyTR(company);
+
   if (!isUnique) {
     return res.status(400).json({ error: 'Company name must be unique.' });
   }
@@ -842,6 +843,7 @@ exports.addTypeOfRounds = async (req, res) => {
       online_coding_round,
       written_coding_round,
     ];
+
     const result = await pool.query(query, values);
     res.status(201).json(result.rows[0]);
   } catch (error) {

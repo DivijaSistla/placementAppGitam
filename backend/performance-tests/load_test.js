@@ -3,19 +3,19 @@ import { check, sleep } from 'k6';
 
 
 
-const ADMIN_TOKEN="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0LCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDIxOTc4NzQsImV4cCI6MTc0MjIwMTQ3NH0.TfIkHLTPwHPCB_cmNhaNxe19LtOtcTTlXShpWsStht8";
+const ADMIN_TOKEN="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0LCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDIyMTk2OTYsImV4cCI6MTc0MjIyMzI5Nn0.R8JIKWLiqrdsnwIW4KQNJw88Lfd2kPD1HP95XHOvvNw";
 
 export const options = {
     scenarios: {
         load: {
             executor: 'ramping-vus',
-            startVUs: 5,
+            startVUs: 10,
             stages: [
-                { duration: '30s', target: 10 },
-                { duration: '1m', target: 30 },
-                //{ duration: '5m', target: 50 },
-                //{ duration: '10m', target: 100 },
-                //{ duration: '5m', target: 10 },
+                // { duration: '30s', target: 10 },
+                // { duration: '1m', target: 30 },
+                { duration: '5m', target: 50 },
+                { duration: '10m', target: 70 },
+                { duration: '5m', target: 10 },
             ],
         },
     },
